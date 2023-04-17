@@ -30,12 +30,9 @@ const DishCategories = ({ res }) => {
                   {value?.menu_category}
                 </Box>
               </Box>
-              <Box sx={{ display: 'flex', flexDirection: 'column', position: 'absolute', top: '150px ' }}>
+              <Box sx={{ flexDirection: 'column', position: 'absolute', top: '150px ', visibility: IndexOfdishCategories !== tabs && 'hidden' }}>
                 {value?.category_dishes?.map((item) => {
-                  return (<Box >
-                    {/* when user click dishCategories only that related dishes render logic */}
-                    {IndexOfdishCategories === tabs && <Products item={item} />}
-                  </Box>)
+                  return (<Box><Products item={item} /></Box>)
                 })}
               </Box>
             </>

@@ -7,13 +7,14 @@ import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import { useSelector } from 'react-redux';
+import { Divider } from '@mui/material';
 
 const Navbar = ({ res }) => {
 
     const { cart } = useSelector(state => state.cart)
 
     return (
-        <Box sx={{ flexGrow: 1,position:'sticky',top:'0px' }}>
+        <Box sx={{ flexGrow: 1, position: 'sticky', top: '0px' }}>
             <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black', boxShadow: 'none' }}>
                 <Toolbar>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: { xs: '15px', md: '20px' }, color: 'gray' }}>
@@ -30,13 +31,14 @@ const Navbar = ({ res }) => {
                             aria-haspopup="true"
                             color="gray"
                         >
-                            <Badge badgeContent={cart.length} color="error">
+                            <Badge badgeContent={cart.length} color="primary">
                                 <ShoppingCartIcon />
                             </Badge>
                         </IconButton>
                     </Box>
                 </Toolbar>
             </AppBar>
+            <Divider />
         </Box >
     )
 }
